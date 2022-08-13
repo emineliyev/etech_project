@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- ======= Breadcrumbs Section ======= -->
+<section class="breadcrumbs">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Yeni layihə</h2>
+            <ol>
+                <li><a href="{% url 'index' %}">Əsas səhifə</a></li>
+                <li>Yeni layihə</li>
+            </ol>
+        </div>
+        <form enctype="multipart/form-data" action="" method="post">
+            {% csrf_token %}
+            {% for hidden in form.hidden_fields %}
+            {{ hidden }}
+            {% endfor %}
+            {% for field in form %}
+            {{ field }} <br/>
+            {% endfor %}
+            <span>Aktiv etmək üçün qutucuğu seçin.</span>
+            <br>
+            <br>
+            {{ image_form.management_form }}
+            {% for form in image_form %}
+            {{ form }}
+            {% endfor %}
+            <br>
+            <span>Portfolio üçün şəkil ölçüsü 800X600.</span>
+            <br>
+            <br>
+            <button class="btn btn-success">Əlavə et</button>
+        </form>
+
+    </div>
+</section>
+<!-- End Breadcrumbs Section -->
+
+<section class="inner-page">
+    <div class="container">
+        <p>
+            Example inner page template
+        </p>
+    </div>
+</section>
+
+</main><!-- End #main -->
+{% endblock %}

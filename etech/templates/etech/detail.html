@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content  %}
+<main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>{{ portfolio.title }}</h2>
+                <ol>
+                    <li><a href="{% url 'index' %}">Əsas səhifə</a></li>
+                    <li>{{ portfolio.title }}</li>
+                </ol>
+            </div>
+
+        </div>
+    </section><!-- Breadcrumbs Section -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row gy-4">
+                <div class="col-lg-8">
+                    <div class="portfolio-details-slider swiper-container">
+                        <div class="swiper-wrapper align-items-center">
+
+                            {% for image in portfolio.portfolio_images.all %}
+                            <div class="swiper-slide">
+                                <img src="{{ image.image.url }}" alt="">
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="portfolio-info">
+                        <h3>Layihə haqqında məlumat</h3>
+                        <ul>
+                            <li><strong>Kateqoriya</strong>: {{ portfolio.category }}</li>
+                            <li><strong>Müştəri</strong>: {{ portfolio.client }}</li>
+                            <li><strong>Təhvil tarixi</strong>: {{ portfolio.project_date }}</li>
+                            <li><strong>Layihə URL</strong>: <a href="#">{{ portfolio.project_url }}</a></li>
+                        </ul>
+                    </div>
+                    <div class="portfolio-description">
+                        <h2>Əlavə məlumat</h2>
+                        <p>{{ portfolio.text }}</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Portfolio Details Section -->
+
+</main><!-- End #main -->
+{% endblock %}

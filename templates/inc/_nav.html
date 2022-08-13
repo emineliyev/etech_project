@@ -1,0 +1,53 @@
+{% load static %}
+<!-- ======= Top Bar ======= -->
+<section id="topbar" class="d-flex align-items-center">
+    {% for contact in contacts %}
+    <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+            <i class="bi bi-envelope-fill"></i><a href="mailto:contact@example.com">{{ contact.email }}</a>
+            <i class="bi bi-phone-fill phone-icon"></i> {{ contact.phone_1 }}
+        </div>
+        <div class="social-links d-none d-md-block">
+            <a href="{{ contact.soc_link_1 }}" class="facebook"><i class="bi {{ contact.soc_icon_1 }}"></i></a>
+            <a href="{{ contact.soc_link_2 }}" class="instagram"><i class="bi {{ contact.soc_icon_2 }}"></i></a>
+            <a href="{{ contact.soc_link_3 }}" class="linkedin"><i class="bi {{ contact.soc_icon_3 }}"></i></i></a>
+            <a href="{{ contact.soc_link_4 }}" class="twitter"><i class="bi bi {{ contact.soc_icon_4 }}"></i></a>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+<!-- ======= Header ======= -->
+<header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+        <div class="logo me-auto">
+            {% for contact in contacts %}
+
+            <h1><a href="{% url 'index' %}"><img src="{{ contact.logo.url }}" alt=""></a></h1>
+            {% endfor %}
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+
+        {% if request.path != '/portfolio/' %}
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto active" href="#hero">Əvvələ</a></li>
+                <li><a class="nav-link scrollto" href="#about">Haqqımızda</a></li>
+                <li><a class="nav-link scrollto" href="#services">Xidmətlər</a></li>
+                <li><a class="nav-link scrollto" href="#portfolio">Layihələr</a></li>
+                <li><a class="nav-link scrollto" href="#contact">Əlaqə</a></li>
+                {% if user.is_superuser %}
+
+                <li><a class="nav-link" href="{% url 'portfolio' %}">Layihə əlavə et</a></li>
+                {% endif %}
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+        {% endif %}
+
+    </div>
+</header>
+<!-- End Header -->
