@@ -13,7 +13,7 @@ import os
 from pathlib import Path
 import dj_database_url
 
-BD_NAME = os.environ.get('DB_NAME')
+DB_NAME = os.environ.get('DB_NAME')
 DB_PASSWORD = os.environ.get('DB_PASSWORD')
 DB_HOST = os.environ.get('DB_HOST')
 DB_USER = os.environ.get('DB_USER')
@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'etechsite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': BD_NAME,
+        'NAME': DB_NAME,
         'USER': DB_USER,
         'PASSWORD': DB_PASSWORD,
         'HOST': DB_HOST,
