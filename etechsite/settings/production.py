@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary',
     'etech.apps.EtechConfig',
     'django_cleanup',
 ]
@@ -140,5 +141,11 @@ MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'hnqnt01z9',
+    'API_KEY': '191527525617399',
+    'API_SECRET': '1jRwLZpONdOlZLhDrBDqp4lUdNA',
+}
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
