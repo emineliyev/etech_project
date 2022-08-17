@@ -19,6 +19,10 @@ DB_HOST = os.environ.get('DB_HOST')
 DB_USER = os.environ.get('DB_USER')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
+CLOUD_NAME = os.environ.get('CLOUD_NAME')
+API_KEY = os.environ.get('API_KEY')
+API_SECRET = os.environ.get('API_SECRET')
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
@@ -143,9 +147,9 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'hnqnt01z9',
-    'API_KEY': '191527525617399',
-    'API_SECRET': '1jRwLZpONdOlZLhDrBDqp4lUdNA',
+    'CLOUD_NAME': CLOUD_NAME,
+    'API_KEY': API_KEY,
+    'API_SECRET': API_SECRET,
 }
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
