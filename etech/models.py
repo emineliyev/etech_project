@@ -19,14 +19,29 @@ class About(models.Model):
     image = models.ImageField(upload_to='image/about/%Y/%m/%d/', verbose_name='Şəkil', help_text='Şəkil ölçüsü: 545X470')
     title = models.CharField(max_length=60, verbose_name='Haqqımda başlıq')
     text = models.TextField(verbose_name='Haqqımda mətn')
+    about_quote_title_1 = models.TextField(verbose_name='Haqqımda sitat 1 başlıq')
     about_quote_1 = models.TextField(verbose_name='Haqqımda sitat 1')
+    about_quote_title_2 = models.TextField(verbose_name='Haqqımda sitat 2 başlıq')
     about_quote_2 = models.TextField(verbose_name='Haqqımda sitat 2')
+
+    quote_title_1 = models.TextField(verbose_name='Sitat başlıq-1')
     quote_1 = models.TextField(verbose_name='Sitat-1')
+
+    quote_title_2 = models.TextField(verbose_name='Sitat başlıq-2')
     quote_2 = models.TextField(verbose_name='Sitat-2')
+
+    quote_title_3 = models.TextField(verbose_name='Sitat başlıq-3')
     quote_3 = models.TextField(verbose_name='Sitat-3')
+
+    quote_title_4 = models.TextField(verbose_name='Sitat başlıq-4')
     quote_4 = models.TextField(verbose_name='Sitat-4')
+
+    quote_title_5 = models.TextField(verbose_name='Sitat başlıq-5')
     quote_5 = models.TextField(verbose_name='Sitat-5')
+
+    quote_title_6 = models.TextField(verbose_name='Sitat başlıq-6')
     quote_6 = models.TextField(verbose_name='Sitat-6')
+
     happy_clients = models.PositiveBigIntegerField(default=0, verbose_name='Məmnun müştəri sayı')
     projects = models.PositiveBigIntegerField(default=0, verbose_name='Layihə sayı')
     hours_of_support = models.PositiveBigIntegerField(default=0, verbose_name='Dəstək saatları')
