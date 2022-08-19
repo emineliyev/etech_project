@@ -40,13 +40,12 @@
 <main id="main">
 
     <!-- ======= About Us Section ======= -->
-    {% for about in abouts %}
     <section id="about" class="about">
         <div class="container" data-aos="fade-up">
-
+            {% for about in abouts %}
             <div class="row no-gutters">
                 <div class="col-lg-6 video-box">
-                    <img src="{{ about.image.url }}" class="img-fluid" alt="">
+                    <img src="" class="img-fluid" alt="">
                 </div>
 
                 <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
@@ -58,86 +57,32 @@
 
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                         <div class="icon"><i class="bx bx-fingerprint"></i></div>
-                        <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+                        <h4 class="title"><a href="">{{ about.about_quote_1 }}</a></h4>
                         <p class="description">{{ about.about_quote_1 }}</p>
                     </div>
 
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                         <div class="icon"><i class="bx bx-gift"></i></div>
-                        <h4 class="title"><a href="">Nemo Enim</a></h4>
+                        <h4 class="title"><a href="">{{ about.about_quote_2 }}</a></h4>
                         <p class="description">{{ about.about_quote_2 }}</p>
                     </div>
 
                 </div>
             </div>
-
+            {% endfor %}
         </div>
-
-    </section>
-    <!-- End About Us Section -->
-
-    <!-- ======= About Lists Section ======= -->
-    <section class="about-lists">
-        <div class="container">
-
-            <div class="row no-gutters">
-
-                <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up">
-                    <span>01</span>
-                    <h4>Lorem Ipsum</h4>
-                    <p>{{ about.quote_1 }}</p>
-                </div>
-
-                <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="100">
-                    <span>02</span>
-                    <h4>Repellat Nihil</h4>
-                    <p>{{ about.quote_2 }}</p>
-                </div>
-
-                <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="200">
-                    <span>03</span>
-                    <h4> Ad ad velit qui</h4>
-                    <p>{{ about.quote_3 }}</p>
-                </div>
-
-                <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="300">
-                    <span>04</span>
-                    <h4>Repellendus molestiae</h4>
-                    <p>{{ about.quote_4 }}</p>
-                </div>
-
-                <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="400">
-                    <span>05</span>
-                    <h4>Sapiente Magnam</h4>
-                    <p>{{ about.quote_5 }}</p>
-                </div>
-
-                <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="500">
-                    <span>06</span>
-                    <h4>Facilis Impedit</h4>
-                    <p>{{ about.quote_6 }}</p>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-    {% endfor %}
-    <!-- End About Lists Section -->
+    </section><!-- End About Us Section -->
 
     <!-- ======= Counts Section ======= -->
     <section class="counts section-bg">
         <div class="container">
 
             <div class="row">
-                {% for about in abouts %}
-
 
                 <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up">
                     <div class="count-box">
                         <i class="bi bi-simple-smile" style="color: #20b38e;"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="{{ about.happy_clients }}"
-                              data-purecounter-duration="1"
+                        <span data-purecounter-start="0" data-purecounter-end="{{ about.happy_clients }}" data-purecounter-duration="1"
                               class="purecounter"></span>
                         <p>Məmnun müştəri</p>
                     </div>
@@ -146,18 +91,16 @@
                 <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="200">
                     <div class="count-box">
                         <i class="bi bi-document-folder" style="color: #c042ff;"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="{{ about.projects }}"
-                              data-purecounter-duration="1"
+                        <span data-purecounter-start="0" data-purecounter-end="{{ about.projects }}" data-purecounter-duration="1"
                               class="purecounter"></span>
-                        <p>Layiyələr</p>
+                        <p>Layihə</p>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="400">
                     <div class="count-box">
                         <i class="bi bi-live-support" style="color: #46d1ff;"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="{{ about.hours_of_support }}"
-                              data-purecounter-duration="1"
+                        <span data-purecounter-start="0" data-purecounter-end="{{ about.hours_of_support }}" data-purecounter-duration="1"
                               class="purecounter"></span>
                         <p>Dəstək saatları</p>
                     </div>
@@ -166,18 +109,16 @@
                 <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="600">
                     <div class="count-box">
                         <i class="bi bi-users-alt-5" style="color: #ffb459;"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="{{ about.hard_workers }}"
-                              data-purecounter-duration="1"
+                        <span data-purecounter-start="0" data-purecounter-end="{{ about.hard_workers }}" data-purecounter-duration="1"
                               class="purecounter"></span>
                         <p>Aktiv layihələr</p>
                     </div>
                 </div>
-                {% endfor %}
+
             </div>
 
         </div>
-    </section>
-    <!-- End Counts Section -->
+    </section><!-- End Counts Section -->
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
