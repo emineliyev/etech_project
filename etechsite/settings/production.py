@@ -144,9 +144,9 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'hti8yjdda',
-    'API_KEY': '895926641541684',
-    'API_SECRET': 'e2BSuPV3_vkUveucymyzGomg7PQ',
+    'CLOUD_NAME': 'hpywdmmze',
+    'API_KEY': '648876412787535',
+    'API_SECRET': 'Vbeu3ZGnTTb2dNOxgzBDoHA4cjU',
 }
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
